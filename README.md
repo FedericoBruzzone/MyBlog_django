@@ -10,7 +10,6 @@
 ---
 
 # Setup 
-
 1. Install [Visual studio Code](https://visualstudio.microsoft.com) or your favourite text editor
 
 2. Install [git](https://github.com/git-guides/install-git). 
@@ -21,33 +20,141 @@
 
     I would recommend you to install [3.8.8](https://www.python.org/downloads/release/python-388/) version.
 
-### First step
+4. If you are on MacOS I would racommend to intall pip package management system.
+
+    ```
+    $ sudo easy_install pip
+    ```
+---
+
+## First step
 Now, you can fork or clone this repository and in the folder you can try to set up the python development environment.
 
-```cmd
-    $ python -m venv virt
+Window:
+```
+$ python -m venv virt
 ```
 
-### Second step
+MacOS:
+```
+$ sudo pip install virtualenv
+```
+```
+$ virtualenv thanos
+```
+```
+$ cd thanos
+```
+---
 
-In the JUCE folder in documents (JUCE/extras/AudioPluginHost), there is juce Host called AudioPluginHost, this allows to test our code without a DAW (Digital Audio Workstation).
+## Second step
+You should want to turn on your virtual environment.
 
-You have to open AudioPluginHost.jucer on Projucer and later in Visual Studio 2022, and compile it in debug mode.
+Window:
+```
+$ source virt/Scripts/activate
+```
+MacOS:
+```
+$ source bin/activate
+```
 
-### Third step
+---
 
-Now, you can re-open the "Shimmer" project, and pressing with the right button on "Shimmer_VST3" and in debug menu you can set the path of your AudioPluginHost (.\Documents\JUCE\extras\AudioPluginHost\Builds\VisualStudio2022\x64\Debug\App\AudioPluginHost.exw) on command space.
+## Third step
+Now, you have to install Django.
 
-And, pressing with the right button on "Shimmer_VST3" another time, and click
-"Set as Sturtup project".
+Window:
+```
+$ pip intall django==4.0.6
+```
+MacOS:
+```
+$ sudo pip install django==4.0.6
+```
 
-Now, try to run the Shimmer with Local Windows Debugger button.
+---
+...
+
+---
+
+## Input for windows users
+Start and setup a new django project
+
+Maybe the command `migrate.py` could be only `migrate`
+
+```
+$ django-admin.py startproject --project_name--
+```
+
+```
+$ cd --project_name--
+```
+
+```
+$ python manage.py migrate
+```
+
+```
+$ python manage.py runserver
+```
+
+And now write on your favorite browser `localhost:8000`
+
+---
+
+Create admin user (super user)
+
+Maybe the command `migrate.py` could be only `migrate`
+
+```
+$ winpty python manage.py createsuperuser 
+```
+
+---
+
+Start application
+
+Maybe the command `migrate.py` could be only `migrate`
+
+```
+$ python manage.py startapp --app_name--
+```
+
+In this case the app_name is `theblog` on the firsr folder ablog
+
+After this, you have to add in INTALLED_APPS on ablog/ablog/setting.py file the line 
+```python
+'--name--',
+```
+
+And, you have to add in urlpatterns
+
+---
+
+Generate your random django secret key.
+
+```
+$ python manage.py shell
+```
+
+In the shell:
+
+```python
+$ from django.core.management.utils import get_random_secret_key
+```
+
+```python
+$ print(get_random_secret_key())
+```
+
+---
+
+
+
+---
 
 # Troubleshooting
 If you find problems with the source code or configuration, please contact me at federico.bruzzone.i@gmail.com.
 
-If this is your first time using juce, i understand that the configuration of this project is not easy.
-
-# Full screen GUI
-![Shimmer_VST3](./Docs/Shimmer_VST3.png)
 
