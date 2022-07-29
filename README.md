@@ -5,8 +5,9 @@
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
 # Introduction
+A blog with django
 
-
+{...}
 ---
 
 # Setup 
@@ -78,10 +79,10 @@ $ sudo pip install django==4.0.6
 
 ---
 
-## Input for windows users
+## Command for windows users
 Start and setup a new django project
 
-Maybe the command `migrate.py` could be only `migrate`
+Maybe the command `manage.py` could be only `manage`
 
 ```
 $ django-admin.py startproject --project_name--
@@ -91,9 +92,22 @@ $ django-admin.py startproject --project_name--
 $ cd --project_name--
 ```
 
+Preps your database for migration
+
+```
+$ python manage.py makemigrations
+```
+
+Execute your migration & updates the database
 ```
 $ python manage.py migrate
 ```
+
+---
+
+Run a server
+
+Maybe the command `manage.py` could be only `manage`
 
 ```
 $ python manage.py runserver
@@ -103,9 +117,9 @@ And now write on your favorite browser `localhost:8000`
 
 ---
 
-Create admin user (super user)
+Create a user with admin level premissions
 
-Maybe the command `migrate.py` could be only `migrate`
+Maybe the command `manage.py` could be only `manage`
 
 ```
 $ winpty python manage.py createsuperuser 
@@ -113,9 +127,9 @@ $ winpty python manage.py createsuperuser
 
 ---
 
-Start application
+Create app folder and files
 
-Maybe the command `migrate.py` could be only `migrate`
+Maybe the command `manage.py` could be only `manage`
 
 ```
 $ python manage.py startapp --app_name--
@@ -123,15 +137,34 @@ $ python manage.py startapp --app_name--
 
 In this case the app_name is `theblog` on the firsr folder ablog
 
-After this, you have to add in INTALLED_APPS on ablog/ablog/setting.py file the line 
+After this, you should add in INTALLED_APPS on --project_name--/--project_name--/setting.py file the line 
 ```python
 '--name--',
 ```
 
-And, you have to add in urlpatterns
+And, you should add in urlpatterns on --project_name--/--project_name--/urls.py the line
+
+```python
+path('', include('--app_name--.urls')),
+```
+
+And add at the end of the line `from django.urls import path` the `include` modules like this: 
+
+```python
+from django.urls import path, include
+```
+
+Now, you should create a `utils.py` file on --app_name-- folder like this:
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('''...''')
+]
+```
 
 ---
-
 Generate your random django secret key.
 
 ```
@@ -147,10 +180,6 @@ $ from django.core.management.utils import get_random_secret_key
 ```python
 $ print(get_random_secret_key())
 ```
-
----
-
-
 
 ---
 
