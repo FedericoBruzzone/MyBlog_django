@@ -1,7 +1,8 @@
 # The blog with django
 
-[![Python](https://img.shields.io/badge/Python-3.8.8-orange)](https://docs.python.org/3/)
-[![Django](https://img.shields.io/badge/Django-4.0.6-orange)](https://www.djangoproject.com/)
+[![Python](https://img.shields.io/badge/Python-v3.8.8-green)](https://docs.python.org/3/)
+[![Django](https://img.shields.io/badge/Django-v4.0.6-blue)](https://www.djangoproject.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-v4.4-orange)](https://www.djangoproject.com/)
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
 # Introduction
