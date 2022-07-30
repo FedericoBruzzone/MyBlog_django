@@ -76,9 +76,6 @@ $ sudo pip install django==4.0.6
 ```
 
 ---
-...
-
----
 
 ## Command for windows users
 Start and setup a new django project
