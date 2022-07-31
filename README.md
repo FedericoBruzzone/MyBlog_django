@@ -8,7 +8,7 @@
 # Introduction
 A blog with django
 
-In this repository there is the implementation in django of a blog. It was created to learn how to use Django framework in addition to why I would like to open a blog to talk about computer science, music and critical thinking. The main language for back-end development is python
+In this repository there is the implementation in django of a blog. It was created to learn how to use Django framework in addition to why I would like to open a blog to talk about computer science, music and critical thinking. The main language for the development back end is python, as it is in progress the part of front end is still to be developed in the correct way, for the moment is used bootstrap for a first "look".
 
 ---
 
