@@ -8,7 +8,8 @@
 # Introduction
 A blog with django
 
-{...}
+In this repository there is the implementation in django of a blog. It was created to learn thow to use the Django framework in addition to why I would like to open a blog to talk about computer science, music and critical thinking.
+
 ---
 
 # Setup 
