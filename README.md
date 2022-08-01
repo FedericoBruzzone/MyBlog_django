@@ -57,6 +57,12 @@ Window:
 ```
 $ source virt/Scripts/activate
 ```
+
+After this, I would racommend to run a server to digit:
+```
+$ cd ablog
+```
+
 MacOS:
 ```
 $ source bin/activate
