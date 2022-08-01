@@ -1,5 +1,6 @@
 # The blog with django
 
+[![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/FedericoBruzzone/IP_DRM_for_IEEE1599standard/edit/master/License)
 [![Python](https://img.shields.io/badge/Python-v3.8.8-green)](https://docs.python.org/3/)
 [![Django](https://img.shields.io/badge/Django-v4.0.6-blue)](https://www.djangoproject.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-v4.4-orange)](https://www.djangoproject.com/)
