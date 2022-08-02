@@ -12,7 +12,7 @@ class HomeView(ListView):
     model = Post
     template_name = 'home.html'
     #ordering = ['-id']
-    oredering = ['-post_date']
+    ordering = ['-post_date']
 
 class ArticleDetailView(DetailView):
     model = Post
