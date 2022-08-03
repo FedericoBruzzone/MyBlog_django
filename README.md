@@ -31,6 +31,23 @@ In this repository there is the implementation in django of a blog. It was creat
     ```
 ---
 
+## Simple solution
+If you are in windows, you can try to use this solution:
+
+Clone or fork this repository.
+
+``` 
+$ virtualenv virt && source virt/Scripts/activate && pip install -r requirements.txt 
+```
+
+``` 
+$ cd ablog
+```
+
+and now take a look at **Command for windows users** below.
+
+---
+
 ## First step
 Now, you can fork or clone this repository and in the folder you can try to set up the python development environment.
 
