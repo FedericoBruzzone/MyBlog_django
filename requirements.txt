@@ -1,5 +1,4 @@
 asgiref==3.5.2
-asn1crypto==1.4.0
 backports.zoneinfo==0.2.1
 distlib==0.3.4
 Django==4.0.7
@@ -14,4 +13,3 @@ sympy==1.9
 toolz==0.11.2
 tzdata==2022.1
 varint==1.0.2
-websockets==9.1

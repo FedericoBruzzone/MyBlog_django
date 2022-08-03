@@ -1,2 +1,4 @@
 # Folder
 virt
+
+# virtualenv virt && source virt/Scripts/activate && pip install -r requirements.txt
