@@ -13,10 +13,10 @@
 
             {% if user.is_authenticated  %}
                 - <small><a href="{% url 'update_post' post.pk %}">(Edit)</a></small>
-                <small><a class="text-danger" href="{% url 'delete_post' post.pk %}">(Delete)</a></small><br/>
+                <small><a class="text-danger" href="{% url 'delete_post' post.pk %}">(Delete)</a></small>
             {% endif %}
-                
-            {{ post.body | slice:":200" }}
+            <br/>    
+            {{ post.body | slice:":200" | safe}}
         </li>
     {% endfor %}
     

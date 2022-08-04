@@ -11,6 +11,7 @@ class Post(models.Model):
     body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
     post_time = models.TimeField(auto_now_add=True)
+    #category = models.CharField(max_length=255, default='coding')
 
     def __str__(self):
         return self.title + ' | ' + str(self.author) 
