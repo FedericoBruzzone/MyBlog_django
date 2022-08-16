@@ -9,7 +9,7 @@
         <li>
             <a href="{% url 'article_detail' post.pk %}">{{ post.title }}</a> 
             - {{ post.author.first_name }} {{ post.author.last_name }}
-            - <a class="text-info" href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+            - <a class="text-info" href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> 
             <!-- - {{ post.post_date }} -->
 
             {% if user.is_authenticated  %}
@@ -19,7 +19,7 @@
                 {% endif %}
             {% endif %}
             <br/>    
-            {{ post.body | slice:":200" | safe }}
+            <!-- {{ post.body | slice:":200" | safe }} -->
         </li>
     {% endfor %}
     
