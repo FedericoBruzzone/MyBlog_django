@@ -7,3 +7,5 @@
 # virtualenv virt && source virt/Scripts/activate && pip install -r requirements.txt
 
 # python -m venv virt && source virt/Scripts/activate && cd ablog
+
+# git add . && git commit -m "..." && git push
