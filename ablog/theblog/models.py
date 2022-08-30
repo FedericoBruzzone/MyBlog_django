@@ -7,15 +7,6 @@ from django.urls import reverse
 from datetime import datetime, date
 from ckeditor.fields import RichTextField
 
-class Category(models.Model):
-    name = models.CharField(max_length=255)
-    
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse('home')
-
 class Post(models.Model):
     title = models.CharField(max_length=255)
     header_image = models.ImageField(null=True, blank=True, upload_to="images/")
@@ -38,5 +29,19 @@ class Post(models.Model):
     def get_absolute_url(self):
         #return reverse('article_detail', args=(str(self.id)))
         return reverse('home')
+
+class Category(models.Model):
+    name = models.CharField(max_length=255)
     
-    
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio = models.TextField()
+
+    def __str__(self):
+        return str(self.user)
