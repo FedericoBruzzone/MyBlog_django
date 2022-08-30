@@ -51,7 +51,5 @@ class Profile(models.Model):
     instagram_url = models.CharField(max_length=255, blank=True)
     pinterest_url = models.CharField(max_length=255, blank=True)
 
-
-
     def __str__(self):
         return str(self.user)
