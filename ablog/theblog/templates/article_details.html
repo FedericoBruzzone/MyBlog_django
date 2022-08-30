@@ -45,4 +45,59 @@ post author: {{ post.author.id }} -->
         <small><a href="{% url 'login' %}">Login</a> to like</small>
         {% endif %}
     </form>
+
+    <br/> <br/>
+
+    <div class="card mb-3"> <!--style="max-width: 540px;"-->
+        <div class="row no-gutters">
+          <div class="col-md-2">
+            <img src="{{ post.author.profile.profile_pic.url }}" class="card-img">
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{ post.author.first_name }} 
+                {{ post.author.last_name }}
+              </h5>
+              <p class="small text-muted">
+
+                {% if post.author.profile.website_url %}
+                    <a href="{{ post.author.profile.website_url }}">Website</a>
+                {% endif %}
+
+                {% if post.author.profile.linkedin_url %}
+                    | <a href="{{ post.author.profile.linkedin_url }}">Linkedin</a>
+                {% endif %}
+
+                {% if post.author.profile.indeed_url %}
+                    | <a href="{{ post.author.profile.indeed_url }}">Indeed</a>
+                {% endif %}
+
+                {% if post.author.profile.facebook_url %}
+                    | <a href="{{ post.author.profile.facebook_url }}">Facebook</a>
+                {% endif %}
+
+                {% if post.author.profile.twitter_url %}
+                    | <a href="{{ post.author.profile.twitter_url }}">Twitter</a>  
+                {% endif %}
+
+                {% if post.author.profile.instagram_url %}
+                    | <a href="{{ post.author.profile.instagram_url }}">Instagram</a> 
+                {% endif %}
+
+                {% if post.author.profile.pinterest_url %}
+                    | <a href="{{ post.author.profile.pinterest_url }}">Pinterest</a>
+                {% endif %}
+              </p>
+              <p class="card-text">
+                {{ post.author.profile.bio }}
+              </p>
+              <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--<img src="{{ post.author.profile.profile_pic.url }}" width=100 height=100 class="rounded-circle">-->
+
 {% endblock %}
