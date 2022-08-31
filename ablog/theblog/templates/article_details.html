@@ -27,12 +27,12 @@ post author: {{ post.author.id }} -->
 
     {{ post.body | safe }}
 
-    <br/> <br/>
+    <!--<br/> <br/>
     <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+    <br/> <br/>-->
 
-    <br/> <br/>
-    <hr> <br/>
-
+    
+    <hr> 
     <form action="{% url 'like_post' post.pk %}" method="POST">
         {% csrf_token %}
         {% if user.is_authenticated  %}
@@ -47,6 +47,24 @@ post author: {{ post.author.id }} -->
         {% endif %}
     </form>
 
+    <br/> <br/>
+
+    <h4>Comments...</h4>
+    <hr> 
+    {% if not post.comments.all %}
+        No comments Yet... <a href="#">Add One</a>
+    {% else %}
+        {% for comment in post.comments.all %}
+            <strong>
+                {{ comment.name }} -
+                {{ comment.date_added }}
+            </strong>
+            <br/>
+            {{ comment.body }} 
+            <hr> 
+        {% endfor %}
+    {% endif %}
+    
     <br/> <br/>
 
     <div class="card mb-3"> <!--style="max-width: 540px;"-->
