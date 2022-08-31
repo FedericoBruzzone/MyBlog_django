@@ -47,25 +47,7 @@ post author: {{ post.author.id }} -->
         {% endif %}
     </form>
 
-    <br/> <br/>
-
-    <h4>Comments...</h4>
-    <hr> 
-    {% if not post.comments.all %}
-        No comments Yet... <a href="#">Add One</a>
-    {% else %}
-        {% for comment in post.comments.all %}
-            <strong>
-                {{ comment.name }} -
-                {{ comment.date_added }}
-            </strong>
-            <br/>
-            {{ comment.body }} 
-            <hr> 
-        {% endfor %}
-    {% endif %}
-    
-    <br/> <br/>
+    <br/> 
 
     <div class="card mb-3"> <!--style="max-width: 540px;"-->
         <div class="row no-gutters">
@@ -121,4 +103,28 @@ post author: {{ post.author.id }} -->
           </div>
         </div>
     </div>
+    
+    <br/> 
+
+    <h4>Comments...</h4>
+    {% if not post.comments.all %}
+        No comments Yet... <a href="{% url 'add_comment' post.pk %}">Add One</a>
+    {% else %}
+    <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+    <br/><br/>
+        {% for comment in post.comments.all %}
+            <hr> 
+            <strong>
+                {{ comment.name }} -
+                {{ comment.date_added }}
+            </strong>
+            <br/>
+            {{ comment.body }} 
+            <hr> 
+        {% endfor %}
+        <br/>
+        <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+    {% endif %}
+    
+    <br/><br/><br/>       
 {% endblock %}
